@@ -1,30 +1,21 @@
 # React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+## Keys que aprendi en este proyecto
+* Cuando se pasa como valor en un type cuando es la funcion modificadora, asi se pone:
+type TipPercentageFormProps = {
+    setTip: React.Dispatch<React.SetStateAction<number>>
+    tip: number
 }
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+En este caso el setTip es una funcion modificadora, lo unico que hizo falta fue poner el cursor sobre ella y nos muestra que es
+
+* Para instalar Tailwind nos fuimos a tailwind -> docs -> frameworks guides -> vite
+
+* En la funcion addItem, cuando hacemos map para poder incrementar una propiedad existente, en una sola linea no podiamos y tuvimos
+que usar el spread operator, a diferencia de otros proyectos cuando usabamos el if, si podiamos
+
+* A diferencia de JS vanilla, no podemos acceder a valores del DOM como const valorDOM = documento.querySelector('.elemento').value
+esto lo intente porque queria saber el valor de la propina o subtotal y leerlo de el DOM, en vez de eso, creamos un hook con useState
+y usamos el onChange para setear ese valor
+
+* A si mismo, la diferencia entre onClick vs onChange, es que onChange es mas para cuando se cambia el valor de algun input o algo de algun formulario
+
